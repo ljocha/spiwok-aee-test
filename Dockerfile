@@ -8,6 +8,7 @@ RUN apt install -y python3-notebook
 RUN apt install -y python3-pip
 
 RUN pip3 install mdtraj
+RUN pip3 install jupyterhub
 
 WORKDIR /work
 ENV HOME /home/jovyan
