@@ -16,7 +16,8 @@ ENV HOME /home/jovyan
 RUN mkdir /home/jovyan
 RUN chown -R 1000:1000 /work /home/jovyan
 
-COPY *.ipynb /work/
+#COPY *.ipynb /work/
+COPY ./ /work
 
 CMD jupyter notebook --ip 0.0.0.0 --port 8888 
 
