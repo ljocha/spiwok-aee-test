@@ -13,11 +13,9 @@ RUN pip3 install jupyterhub
 WORKDIR /work
 ENV HOME /home/jovyan
 
-RUN mkdir /home/jovyan
-RUN chown -R 1000:1000 /work /home/jovyan
-
-#COPY *.ipynb /work/
+RUN useradd -m -u 1000 jovyan
 COPY ./ /work
+RUN chown -R 1000:1000 /work /home/jovyan
 
 CMD jupyter notebook --ip 0.0.0.0 --port 8888 
 
